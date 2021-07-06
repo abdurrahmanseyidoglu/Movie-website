@@ -96,6 +96,7 @@
       margin: 5px;
       font-size: 1.7rem;
        }
+       
   }
 
 </style>

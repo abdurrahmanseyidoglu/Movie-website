@@ -87,11 +87,22 @@ font-size: 2rem;
 }
 @include mq(tablet, max) {
 .footer{
+
+a{
+  font-size: 1.5rem;
+}
+&__logo{
+  margin-left: 50px;
+  width: 300px;
+  height: 300px;
+}
 &__container{
   display: flex;
   flex-flow: column wrap;
+
 }
 }
+
 }
 
 </style>
