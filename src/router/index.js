@@ -4,8 +4,9 @@ import HomeComponent from '../views/home/Home.vue';
 import ContactComponent from '../views/about/About.vue';
 import AboutComponent from '../views/about/About.vue';
 import LatestComponent from '../views/latest/Latest.vue';
-import MoviesComponent from '../views/movies/Movies.vue';
 import TvShowsComponent from '../views/tv-shows/TvShows.vue';
+import MovieDetailesComponent from '../views/movie/MovieDetailes.vue';
+
 
 
 
@@ -29,15 +30,16 @@ const routes = [
     name: 'Latest',
     component: LatestComponent
   },
-  {
-    path: '/movies',
-    name: 'Movies',
-    component: MoviesComponent
-  },
+
   {
     path: '/tvshows',
     name: 'TvShows',
     component: TvShowsComponent
+  },
+  {
+    path: '/movie/:id',
+    name: 'MovieDetails',
+    component: MovieDetailesComponent,
   },
 ];
 

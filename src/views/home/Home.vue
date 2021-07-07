@@ -6,7 +6,7 @@
     </form>
       <div class="movie">
     <div class="movie__card" v-for="movieList in movie" :key="movieList.imdbID"> 
-     <router-link :to="'/movie/' + movieList.imdbID" class="movie__link">
+     <router-link :to="'/movie/:id' + movieList.imdbID" class="movie__link">
       <div class="movie__image-container">
       <img :src="movieList.Poster" alt="Movie cover">
       </div>
