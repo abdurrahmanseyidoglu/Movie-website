@@ -1,3 +1,6 @@
+//TODO: 1- display random movies at home.vue when the component gets mounted 2- make search result "top results "display above the recommended movie
+  
+},
 <template>
     <div class="home">
     <form @submit.prevent="searchAPI()" class="home__search-form">
@@ -27,7 +30,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref , onMounted } from 'vue';
 export default {
   setup(){
     
@@ -49,6 +52,9 @@ export default {
       }
 
     }
+     onMounted(() => {
+      
+    })
 
     return{
       search,

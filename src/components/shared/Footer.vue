@@ -46,15 +46,14 @@
 
 <style lang="scss">
 
-*{
- border: red 1px solid;
+// *{
+//  border: red 1px solid;
   
-}
+// }
 .footer {
-position: absolute;
+position: relative;
   bottom: 0;
   width: 100%;
-flex-shrink: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
