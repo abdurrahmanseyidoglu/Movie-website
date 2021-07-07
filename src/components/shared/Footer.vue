@@ -50,6 +50,7 @@
 .footer {
 display: flex;
 flex-direction: column;
+
 align-items: center;
 justify-content: center;
 background-color: $black;
@@ -87,6 +88,7 @@ font-size: 2rem;
 }
 @include mq(tablet, max) {
 .footer{
+
 
 a{
   font-size: 1.5rem;
