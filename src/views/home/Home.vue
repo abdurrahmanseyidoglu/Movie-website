@@ -9,20 +9,20 @@
     </form>
       <div class="movie">
     <div class="movie__card" v-for="movieList in movie" :key="movieList.imdbID"> 
-     <router-link :to="'/movie/:id' + movieList.imdbID" class="movie__link">
-      <div class="movie__image-container">
-      <img :src="movieList.Poster" alt="Movie cover">
-      </div>
-      <div class="movie__detailes">
-      <div class="movie__title">{{ movieList.Title }}</div>
-      <div class="movie__type">{{ movieList.Type }}</div>
-      <div class="movie__year">{{ movieList.Year }}</div>
-      
-      </div>
 
-      
-     
-     </router-link>
+      <div class="movie__image-container">
+      <img class="movie__image" :src="movieList.Poster" alt="Movie cover">
+      </div>
+      <div class="movie__info">
+      <div class="movie__title">Name : {{ movieList.Title }}</div>
+      <div class="movie__type">Type : {{ movieList.Type }}</div>
+      <div class="movie__year">Year :{{ movieList.Year }}</div> 
+      <div class="movie__detailes">
+      <router-link :to="'/movie/:id' + movieList.imdbID" class="movie__link">
+      <button class="movie__detailes-btn" >View Detailes</button>
+      </router-link>
+      </div>
+      </div>
 
     </div>
   </div>
@@ -32,6 +32,7 @@
 <script>
 import { ref , onMounted } from 'vue';
 export default {
+
   setup(){
     
     
@@ -60,6 +61,7 @@ export default {
       search,
       movie,
       searchAPI,
+      // props,
     }
   }
 
@@ -69,8 +71,9 @@ export default {
 </script>
 
 <style lang="scss">
-.home{
 
+.home{
+  background-color: $black;
 &__search-form{
   display: flex;
   flex-direction: row;
@@ -95,6 +98,45 @@ export default {
         background: $red;
       } 
     }
+
+}
+.movie{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 10px 10px;
+    &__info{
+      align-items: center;
+      justify-content: center;
+    }
+    &__card{
+      border: $red solid 3px ;
+      border-radius: 10px;
+      margin: 10px 10px;
+      width: 300px;
+      height: 530px;
+    }
+    &__title{
+      color: $white;
+      word-break: break-all;
+    }
+    &__type{
+      color: $white;
+    }
+    &__year{
+      color: $white;
+    }
+    &__detailes-btn{
+      background-color: $black;
+      border: $red 2px solid;
+      border-radius: 3px;
+    }
+    &__image{
+      width: 294px;
+      height: 400px;
+      mask-type: cover;
+    }
+
 }
 
 </style>

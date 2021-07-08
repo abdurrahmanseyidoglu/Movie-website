@@ -3,7 +3,7 @@
   
   <div class="footer__container">
 
-  <img src="../../../public/footer__logo.png" alt="logo" class="footer__logo" width="200px" height="200px">
+  <img src="../../../images/footerImages/footer__logo.png" alt="logo" class="footer__logo" width="200px" height="200px">
   <ul>
     
     <li>  <a class="footer__link" href="#">FAQ</a></li>
@@ -33,9 +33,7 @@
     <li>  <a class="footer__link" href="#">Only on Netflix</a></li>
   </ul>
   </div>
-<div class="buttom">
-  <p>Made with <span class="buttom__heart">♡</span>  By  <a href="https://github.com/abdurrahmanseyidoglu">Abdurrahman Seyidoğlu</a> </p>
-</div>
+
   
   </footer>
 </template>
@@ -59,7 +57,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 background-color: $black;
-background-image: url(../../../public/footer__background.jpg);
+background-image: url(../../../images/footerImages/footer__background.jpg);
 background-size: 100% 100%;
   ul {
     display: flex;
