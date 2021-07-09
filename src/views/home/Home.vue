@@ -1,4 +1,4 @@
-//TODO: 1- display random movies at home.vue when the component gets mounted 2- make search result "top results "display above the recommended movie
+//TODO: 1- display random movies at home.vue when the component gets mounted 
   
 },
 <template>
@@ -17,7 +17,7 @@
       <div class="movie__info">
       <div class="movie__title">Name : {{ movieList.Title }}</div>
       
-      <div class="movie__year">Year :{{ movieList.Year }}</div> 
+      <div class="movie__year">Year : {{ movieList.Year }}</div> 
       <div class="movie__detailes">
       <router-link :to="'/movie/:id' + movieList.imdbID" class="movie__link">
       <button class="movie__detailes-btn" >Detailes</button>
@@ -41,7 +41,7 @@ export default {
     const movie = ref([]);
     const searchAPI= ()=>{
       if(search.vlaue != ""){
-        fetch(`http://www.omdbapi.com/?s=${search.value}&apikey=a697e544&s`)
+        fetch(`http://www.omdbapi.com/?s=${search.value}&apikey=a697e544`)
         .then(response =>response.json())
         .then(data => {
           //Search is an object key from the API
@@ -135,9 +135,13 @@ export default {
       overflow: hidden;
       white-space: nowrap;
           }
+    &__image-container{
+      position: relative;
+
+    }
     &__type{
+      
       color: $white;
-      display: block;      
     }
     &__year{
     }
@@ -161,12 +165,15 @@ export default {
       }
 
     }
+    &__image-container{
+      display: block; 
+    }
     &__image{
-      display: block;
-     border-radius: 4px;
+    border-radius: 4px;
       width: 294px;
       height: 400px;
       mask-type: cover;
+      
     }
 
 }
