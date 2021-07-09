@@ -15,7 +15,7 @@
       <div class="movie__type">Type : {{ movieList.Type }}</div>
       </div>
       <div class="movie__info">
-      <div class="movie__title">Name : {{ movieList.Title }}</div>
+      <div class="movie__title">Name : <span> {{ movieList.Title }} </span></div>
       
       <div class="movie__year">Year : {{ movieList.Year }}</div> 
       <div class="movie__detailes">
@@ -24,7 +24,6 @@
       </router-link>
       </div>
       </div>
-
     </div>
   </div>
 </div>
@@ -36,15 +35,14 @@ export default {
 
   setup(){
     
-    
-    const search = ref('');
+    const search = ref("action");
     const movie = ref([]);
     const searchAPI= ()=>{
       if(search.vlaue != ""){
         fetch(`http://www.omdbapi.com/?s=${search.value}&apikey=a697e544`)
         .then(response =>response.json())
         .then(data => {
-          //Search is an object key from the API
+          //Search is an object key in the API
           
           movie.value = data.Search ;
           //reset search box
@@ -55,14 +53,16 @@ export default {
       }
 
     }
+   
      onMounted(() => {
-      
+      searchAPI();
     })
 
     return{
       search,
       movie,
       searchAPI,
+      // mainScreen,
       // props,
     }
   }
@@ -123,7 +123,7 @@ export default {
       height: 530px;
       &:hover{
       transition :background-color 1s ease ;
-      background-color: $red;
+      background-color:rgb(0, 0, 0);
       box-shadow : 0px 8px 8px 0px $white ;
    
       }
@@ -134,16 +134,28 @@ export default {
     &__title{
       overflow: hidden;
       white-space: nowrap;
+      margin-left: 5px;
+      span{
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
           }
     &__image-container{
       position: relative;
+      display: block;
+
 
     }
     &__type{
-      
+      position: relative;
       color: $white;
+      background-color: $red;
+      margin-left: 5px;
+
     }
     &__year{
+      margin-left: 5px;
     }
     &__detailes{
       display: flex;
@@ -169,10 +181,9 @@ export default {
       display: block; 
     }
     &__image{
-    border-radius: 4px;
+      border-radius: 4px;
       width: 294px;
       height: 400px;
-      mask-type: cover;
       
     }
 

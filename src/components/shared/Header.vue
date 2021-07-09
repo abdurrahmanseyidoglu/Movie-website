@@ -6,8 +6,6 @@
     <div class="header__links">
     <ul>
       <li><router-link to="/" class="header__link">Home</router-link></li>
-      <li><router-link to="/movies" class="header__link">Movies</router-link></li>
-      <li><router-link to="/tvshows" class="header__link">Tv Shows</router-link></li>
       <li><router-link to="/about" class="header__link">About</router-link></li>
       <li><router-link to="/contact" class="header__link">Contact</router-link></li>
     </ul>
