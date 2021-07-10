@@ -15,17 +15,17 @@
           <div class="contact__header-phone-adress">
             <ul>
               <li><h3>PHONE</h3></li>
-              <li><P>(552)558-3018</P></li>
+              <li><p>(552)558-3018</p></li>
             </ul>
             <ul>
               <li><h3>ADRESS</h3></li>
-              <li><P>5678 EXtrea RD. Lorem ipsum dolor sit.</P></li>
+              <li><p>5678 EXtrea RD. Lorem ipsum dolor sit.</p></li>
             </ul>
           </div>
           <div class="contact__header-email">
             <ul>
               <li><h3>Email</h3></li>
-              <li><P>abdurrahmanseyidoglu@gmail.com</P></li>
+              <li><p>abdurrahmanseyidoglu@gmail.com</p></li>
             </ul>
           </div>
         </div>
@@ -134,10 +134,7 @@ import { ref } from 'vue';
         name.value = "";
         email.value= "";
         message.value="";
-        messageSent.value= "message sent !"
-        
-
-
+        messageSent.value= "message sent !";
       }
       return {
         name,
