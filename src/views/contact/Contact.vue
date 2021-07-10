@@ -35,9 +35,31 @@
           <div class="contact__form-message">
           <textarea type="text" name="name" placeholder="Message" />
           </div>
-          <input type="submit" value="Submit" class="contact__form-btn" />
+          <div class="contact__form-btn">
+           <input type="submit" value="Submit"/>
+          </div>
+         
         </form>
       </div>
+    </div>
+    <div class="refund">
+    <div class="refund__main">
+      <h3 class="refund__title">REFUNDS</h3>
+      <p class="refund__header">Get a <span> Refund </span></p>
+      <p class="refund__paragraph">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Excepturi quam ex ad, debitis sit numquam illum beatae cumque ut explicabo,
+        suscipit iusto tenetur, molestias voluptate? 
+        Atque consequuntur voluptates sint laborum!
+        <br>
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, tempora explicabo est tenetur accusantium id reprehenderit? Ipsum, sit ratione natus ducimus possimus cumque! Minima accusantium odit deserunt mollitia sunt quisquam!
+      </p>
+      <button class="refund__btn">
+        REQUEST
+      </button>
+    </div>
+    
     </div>
   </div>
 </template>
@@ -48,6 +70,9 @@
 .contact {
   
   background-color: $black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   &__form{
     border: solid 2px $purple;
     border-radius: 5px;
@@ -56,6 +81,7 @@
   &__header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     &-img {
       margin-left: 100px;
@@ -65,6 +91,7 @@
     &-form{
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         margin-left: 200px;
     }
     &-form-contact{
@@ -86,6 +113,7 @@
     &-phone-adress{
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       gap: 200px;
      
 
@@ -109,17 +137,21 @@
   &__form-nameMail{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
     margin : 20px;
     color: $black;
+    border: none;
+
     input{
       color: $purple;
       font-weight: bold;
       width: 40%;
       height: 40px;
-      
+      border: none;
+
       background-color:rgb(71, 68, 68) ;
       &::placeholder{
         color: rgb(204, 193, 193);
@@ -128,16 +160,21 @@
       }
     }
   }
+  &__form{
+    margin-bottom: 30px;
+  }
     &__form-message{      
       color: $black;
       align-items: center;
       justify-content: center;
       display: flex;
+      flex-wrap: wrap;
     textarea{
       color: $purple;
       font-weight: bold;
       width: 78%;
       height: 150px;
+      border: none;
      
       background-color:rgb(71, 68, 68) ;
       &::placeholder{
@@ -149,12 +186,84 @@
     }
     }
     &__form-btn{
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      margin: 30px 70px;
+      input{
       padding: 20px;
       width:170px;
       margin-top: 20px;
       color: $white;
       background-color: $purple;
+      border-radius: 8px;
+      border: none;
+      font-weight: bolder;
+      font-size: 1.2rem;
+      &:hover{
+        background-color: #573eb3;
+        cursor: pointer;
+
+      }
+      }
+     
       
     }
+    
 }
+
+
+  .refund{
+    background-image: url(../../../images/contactusImages/refund.jpg);
+    background-size: 100%;   
+    &__main{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color:white;
+    }
+    &__title{
+      margin: 10;
+      color: red;
+      font-size: 20px;
+      line-height: 30px;
+
+    }
+    &__header{
+      margin: 0;
+      font-size: 2rem;
+      line-height:3rem ;
+      span{
+        font-weight: bolder;
+        font-size: 3rem;
+      }
+    }
+    &__paragraph{
+      width: 40%;
+      color: rgb(233, 230, 230);
+      font-size: 1.1rem;
+      line-height: 30px;
+    }
+    &__btn{
+      padding: 20px;
+      width:170px;
+      margin-top: 20px;
+      color: $white;
+      background-color: #A91D27;
+      border-radius: 8px;
+      border: none;
+      font-weight: bolder;
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      &:hover{
+      background-color: #dd3944;
+      cursor: pointer;
+      
+      }
+    }
+
+  }
+  
 </style>

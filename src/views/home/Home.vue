@@ -1,4 +1,3 @@
-//TODO: 1- display random movies at home.vue when the component gets mounted 
   
 },
 <template>
@@ -77,6 +76,8 @@ export default {
 .home{
   background-color: $black;
 &__search-form{
+  margin-bottom: 30px;
+  padding: 30px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -84,6 +85,7 @@ export default {
   }
   &__search{
       border-radius: $radius;
+      border: none;
       background: $black;
       font-size: 1.2rem;
       &[type="text"]{
@@ -92,15 +94,21 @@ export default {
       &::placeholder{
         color: $red;
       }
+      &:hover{
+        border: solid $white 1px;
+      }
       
   }
   &__search-button{
     font-size: 1.2rem;
     border-radius: $radius;
+    margin-left: 5px;
       &:hover{
+        cursor: pointer;
         color: $white;
         transition : $slow;
         background: $red;
+        
       } 
     }
 
