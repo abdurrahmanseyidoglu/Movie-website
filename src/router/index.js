@@ -5,9 +5,6 @@ import ContactComponent from '../views/contact/Contact.vue';
 import AboutComponent from '../views/about/About.vue';
 import MovieDetailesComponent from '../views/movie/MovieDetailes.vue';
 
-
-
-
 const routes = [
   {
     path: '/',

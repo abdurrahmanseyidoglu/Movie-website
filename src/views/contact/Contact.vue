@@ -29,13 +29,13 @@
             </ul>
           </div>
         </div>
-        <form action="" class="contact__form">
+        <form @submit.prevent="send" class="contact__form">
           <div class="contact__form-nameMail">
-            <input type="text" name="email" placeholder="Name" />
-            <input type="text" name="name" placeholder="Email Adress" />
+            <input type="text" name="email" placeholder="Name" v-model="name" />
+            <input type="text" name="name" placeholder="Email Adress" v-model="email"/>
           </div>
           <div class="contact__form-message">
-            <textarea type="text" name="name" placeholder="Message" />
+            <textarea type="text" name="name" placeholder="Message" v-model="message" />
           </div>
           <div class="contact__form-btn">
             <input type="submit" value="Submit" />
@@ -102,7 +102,50 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import { ref } from '@vue/reactivity';
+  let firebaseConfig = {
+    apiKey: "AIzaSyC_7K6Kebhj13diEeOXxl8RW9tTX9o7ESk",
+    authDomain: "moviesland-74a37.firebaseapp.com",
+    projectId: "moviesland-74a37",
+    storageBucket: "moviesland-74a37.appspot.com",
+    messagingSenderId: "745664444858",
+    appId: "1:745664444858:web:6e43c1fb5aebf3fca08583"
+  };
+   firebase.initializeApp(firebaseConfig);
+
+   export default {
+
+     setup(){
+       let name = ref("");
+       let email = ref("");
+       let message =  ref("");
+       const customersMessagesDB = firebase.firestore(); 
+       const customersMessages = customersMessagesDB.collection("customersMessages");
+      
+      const send = ()=>{
+        customersMessages.doc().set({
+          name : name.value,
+          email : email.value,
+          message : message.value, 
+        })
+        name.value = "";
+        email.value= "";
+        message.value="";
+
+
+      }
+      return {
+        name,
+        email,
+        message,
+        send,
+
+      }
+
+     }
+   }
+</script>
 
 <style lang="scss">
 .contact {
