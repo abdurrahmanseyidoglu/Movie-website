@@ -70,19 +70,18 @@
     flex-direction: column;
     align-items: flex-start;
     }
-    .header__search-form{
-      display: flex;
-      flex-direction: column;
-    }
+   
     .header__links ul{
     width: 100%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   
     }
     .header__links li { 
       text-align: center;
       margin: 5px;
-      font-size: 1.7rem;
+      font-size: 1rem;
        }
        
   }
