@@ -1,5 +1,4 @@
-  
-},
+
 <template>
     <div class="home">
     <form @submit.prevent="searchAPI()" class="home__search-form">
@@ -61,8 +60,7 @@ export default {
       search,
       movie,
       searchAPI,
-      // mainScreen,
-      // props,
+      
     }
   }
 

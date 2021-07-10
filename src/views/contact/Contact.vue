@@ -40,6 +40,7 @@
           <div class="contact__form-btn">
             <input type="submit" value="Submit" />
           </div>
+          <h2 class="messageSent">{{ messageSent }}</h2>
         </form>
       </div>
     </div>
@@ -103,7 +104,7 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
+import { ref } from 'vue';
   let firebaseConfig = {
     apiKey: "AIzaSyC_7K6Kebhj13diEeOXxl8RW9tTX9o7ESk",
     authDomain: "moviesland-74a37.firebaseapp.com",
@@ -120,6 +121,7 @@ import { ref } from '@vue/reactivity';
        let name = ref("");
        let email = ref("");
        let message =  ref("");
+       let messageSent = ref ("");
        const customersMessagesDB = firebase.firestore(); 
        const customersMessages = customersMessagesDB.collection("customersMessages");
       
@@ -132,6 +134,8 @@ import { ref } from '@vue/reactivity';
         name.value = "";
         email.value= "";
         message.value="";
+        messageSent.value= "message sent !"
+        
 
 
       }
@@ -139,6 +143,7 @@ import { ref } from '@vue/reactivity';
         name,
         email,
         message,
+        messageSent,
         send,
 
       }
@@ -452,5 +457,12 @@ import { ref } from '@vue/reactivity';
    }
   
   }
+  
 }
+.messageSent {
+    color: rgb(25, 190, 25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
