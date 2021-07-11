@@ -17,7 +17,7 @@
       
       <div class="movie__year">Year : {{ movieList.Year }}</div> 
       <div class="movie__detailes">
-      <router-link :to="'/movie/:id' + movieList.imdbID" class="movie__link">
+      <router-link :to="'/movie/' + movieList.imdbID" class="movie__link">
       <button class="movie__detailes-btn" >Detailes</button>
       </router-link>
       </div>
@@ -84,8 +84,9 @@ export default {
   &__search{
       border-radius: $radius;
       border: none;
-      background: $black;
+      background: black;
       font-size: 1.2rem;
+      padding: 10px;
       &[type="text"]{
         color: $red;
       }

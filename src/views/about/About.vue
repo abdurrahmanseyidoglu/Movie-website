@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-  
+  <h1>about</h1>
   </div>
 </template>
 
@@ -9,19 +9,4 @@
 </script>
 
 <style lang="scss">
-.about {
-  &__content {
-    margin: 20px 0;
-    padding: 0;
-
-    font-size: 18px;
-    line-height: 32px;
-
-    img {
-      float: left;
-
-      margin: 0 20px 20px;
-    }
-  }
-}
 </style>

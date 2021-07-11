@@ -25,7 +25,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: $black;
+  background-color: black;
   color: $white;    
   }
   &__logo{
@@ -55,7 +55,7 @@
     &:hover{
         transition : $slow;
         color: $red;
-        background-color : black;
+        background-color : $black;
     }
   }
   

@@ -20,7 +20,7 @@ const routes = [
     component: ContactComponent
   },
   
-  {
+  { //This is dynamic route , How cool is that! =D
     path: '/movie/:id',
     name: 'MovieDetails',
     component: MovieDetailesComponent,

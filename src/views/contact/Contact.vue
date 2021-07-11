@@ -32,7 +32,7 @@
         <form @submit.prevent="send" class="contact__form">
           <div class="contact__form-nameMail">
             <input type="text" name="email" placeholder="Name" v-model="name" />
-            <input type="text" name="name" placeholder="Email Adress" v-model="email"/>
+            <input type="text" name="name" placeholder="Email Adress" v-model="email" />
           </div>
           <div class="contact__form-message">
             <textarea type="text" name="name" placeholder="Message" v-model="message" />
@@ -104,49 +104,46 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-  let firebaseConfig = {
-    apiKey: "AIzaSyC_7K6Kebhj13diEeOXxl8RW9tTX9o7ESk",
-    authDomain: "moviesland-74a37.firebaseapp.com",
-    projectId: "moviesland-74a37",
-    storageBucket: "moviesland-74a37.appspot.com",
-    messagingSenderId: "745664444858",
-    appId: "1:745664444858:web:6e43c1fb5aebf3fca08583"
-  };
-   firebase.initializeApp(firebaseConfig);
+import { ref } from "vue";
+let firebaseConfig = {
+  apiKey: "AIzaSyC_7K6Kebhj13diEeOXxl8RW9tTX9o7ESk",
+  authDomain: "moviesland-74a37.firebaseapp.com",
+  projectId: "moviesland-74a37",
+  storageBucket: "moviesland-74a37.appspot.com",
+  messagingSenderId: "745664444858",
+  appId: "1:745664444858:web:6e43c1fb5aebf3fca08583",
+};
+firebase.initializeApp(firebaseConfig);
 
-   export default {
+export default {
+  setup() {
+    let name = ref("");
+    let email = ref("");
+    let message = ref("");
+    let messageSent = ref("");
+    const customersMessagesDB = firebase.firestore();
+    const customersMessages = customersMessagesDB.collection("customersMessages");
 
-     setup(){
-       let name = ref("");
-       let email = ref("");
-       let message =  ref("");
-       let messageSent = ref ("");
-       const customersMessagesDB = firebase.firestore(); 
-       const customersMessages = customersMessagesDB.collection("customersMessages");
-      
-      const send = ()=>{
-        customersMessages.doc().set({
-          name : name.value,
-          email : email.value,
-          message : message.value, 
-        })
-        name.value = "";
-        email.value= "";
-        message.value="";
-        messageSent.value= "message sent !";
-      }
-      return {
-        name,
-        email,
-        message,
-        messageSent,
-        send,
-
-      }
-
-     }
-   }
+    const send = () => {
+      customersMessages.doc().set({
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      });
+      name.value = "";
+      email.value = "";
+      message.value = "";
+      messageSent.value = "message sent !";
+    };
+    return {
+      name,
+      email,
+      message,
+      messageSent,
+      send,
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -211,7 +208,6 @@ import { ref } from 'vue';
       flex-wrap: wrap;
     }
   }
-  
 
   &__form-nameMail {
     display: flex;
@@ -230,6 +226,7 @@ import { ref } from 'vue';
       width: 40%;
       height: 40px;
       border: none;
+      font-size: 1rem;
 
       background-color: rgb(71, 68, 68);
       &::placeholder {
@@ -254,6 +251,7 @@ import { ref } from 'vue';
       width: 78%;
       height: 150px;
       border: none;
+      font-size: 1rem;
 
       background-color: rgb(71, 68, 68);
       &::placeholder {
@@ -305,23 +303,21 @@ import { ref } from 'vue';
           }
         }
       }
-      
+
       &__form {
         align-items: center;
         justify-content: center;
         &-btn {
-        margin-bottom: 20px;
-        margin-top: 0;
-        align-items: center;
-        justify-content: center;
+          margin-bottom: 20px;
+          margin-top: 0;
+          align-items: center;
+          justify-content: center;
+        }
       }
-      }
-      
     }
   }
 }
 .refund {
-
   background-image: url(../../../images/contactusImages/refund.jpg);
   background-size: 100%;
   &__main {
@@ -369,23 +365,17 @@ import { ref } from 'vue';
       cursor: pointer;
     }
   }
-@include mq(tablet, max) {
-  background-image:unset;
-  &__paragraph{
-    width: 100%;
-    padding: 0 10px;
-    margin-bottom: 0;
+  @include mq(tablet, max) {
+    background-image: unset;
+    &__paragraph {
+      width: 100%;
+      padding: 0 10px;
+      margin-bottom: 0;
+    }
+    &__btn {
+      margin: 0;
+    }
   }
-  &__btn{
-    margin : 0;
-    
-  }
-  
-
-}
-
-
-
 }
 
 .faq {
@@ -426,11 +416,10 @@ import { ref } from 'vue';
   }
   @include mq(tablet, max) {
     margin: 0;
-    &__questions{
+    &__questions {
       margin: 5px;
       padding: 0;
     }
-   
   }
 }
 
@@ -446,20 +435,17 @@ import { ref } from 'vue';
     width: 70%;
   }
   @include mq(tablet, max) {
-
-   width: 100%;
-   height: 300px;
-   iframe{
-    height: 200px;
-   }
-  
+    width: 100%;
+    height: 300px;
+    iframe {
+      height: 200px;
+    }
   }
-  
 }
 .messageSent {
-    color: rgb(25, 190, 25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  color: rgb(25, 190, 25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
