@@ -19,39 +19,36 @@
       </div>
       <div class="movie__title-right">
         <div class="movie__title-imdb-rating">
-          <span class="movie__title-rating-lable"> IMDb RATING</span> : 
+          <span class="movie__title-rating-lable"> IMDb RATING</span> :
           <span class="movie__title-rating-value">{{ detailes.imdbRating }} / 10</span>
         </div>
         <div class="movie__title-imdb-votes">
-          <span class="movie__title-voters-lable"> TOTAL VOTES</span> : 
+          <span class="movie__title-voters-lable"> TOTAL VOTES</span> :
           <span class="movie__title-voters-value">{{ detailes.imdbVotes }}</span>
         </div>
       </div>
-    
     </div>
-      <main class="detailes__main">
-    <div class="movie__poster"><img :src="detailes.Poster" alt="Movie Cover" /></div>
-    <div class="detailes__wrapper">
-    <div class="movie__genre">
-      <p> <span> Genra</span> : {{ detailes.Genre }}</p>
-    </div>
-    <div class="movie__writer">
-      <p> <span>Writer</span> : {{ detailes.Writer }}</p>
-    </div>
-    <div class="movie__language">
-      <p><span>Language</span> : {{ detailes.Language }}</p>
-    </div>
-    <div class="movie__actors">
-      <p> <span>Actors</span> : {{ detailes.Actors }}</p>
-    </div>
-    </div>
-    <div class="movie__plot">
-      <p><span> About</span> : {{ detailes.Plot }}</p>
-    </div>
-    
+    <main class="detailes__main">
+      <div class="movie__poster"><img :src="detailes.Poster" alt="Movie Cover" /></div>
+      <div class="detailes__wrapper">
+        <div class="movie__genre">
+          <p><span> Genra</span> : {{ detailes.Genre }}</p>
+        </div>
+        <div class="movie__writer">
+          <p><span>Writer</span> : {{ detailes.Writer }}</p>
+        </div>
+        <div class="movie__language">
+          <p><span>Language</span> : {{ detailes.Language }}</p>
+        </div>
+        <div class="movie__actors">
+          <p><span>Actors</span> : {{ detailes.Actors }}</p>
+        </div>
+      </div>
+      <div class="movie__plot">
+        <p><span> About</span> : {{ detailes.Plot }}</p>
+      </div>
     </main>
   </div>
-
 </template>
 
 <script>
@@ -86,7 +83,7 @@ export default {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
+
   color: $white;
   background-color: $black;
 }
@@ -116,51 +113,46 @@ export default {
     gap: 15px;
     color: gray;
   }
-  &-imdb-rating{
-    margin-bottom: 10px ;
+  &-imdb-rating {
+    margin-bottom: 10px;
   }
-  &-rating-lable{
+  &-rating-lable {
     color: gray;
   }
-  &-rating-value{
-  
+  &-rating-value {
   }
-  &-voters-lable{
-  color: gray;
+  &-voters-lable {
+    color: gray;
   }
-  &-voters-value{
-  
+  &-voters-value {
   }
 }
-.detailes__main{
+.detailes__main {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  span{
+  span {
     color: gray;
   }
-  
 }
 .movie__plot {
   width: 50%;
-  span{
-    color:gray
+  span {
+    color: gray;
   }
   @include mq(tablet, max) {
     width: 95%;
     margin-left: 10px;
-    
   }
-  
 }
-.detailes__wrapper{
-  
-    @include mq(tablet, max) {
+.detailes__wrapper {
+  width: 50%;
+  @include mq(tablet, max) {
     display: flex;
     flex-flow: column wrap;
     margin-left: 10px;
-
-    }
+    width: 95%;
   }
+}
 </style>
