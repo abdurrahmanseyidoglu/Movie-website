@@ -22,6 +22,7 @@
     align-items: center;
     background-color: black;
     color: $white;
+    padding: 20px;
   }
   &__logo {
     font-size: 2rem;
@@ -53,24 +54,28 @@
 }
 
 @include mq(tablet, max) {
-  .header__links {
-    width: 100%;
-  }
-  .header__menu {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header__links ul {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .header__links li {
-    text-align: center;
-    margin: 5px;
-    font-size: 1rem;
+  .header {
+    &__links {
+      width: 100%;
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    &__links ul {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &__links li {
+      text-align: center;
+      margin: 5px;
+      font-size: 1rem;
+    }
   }
 }
 </style>

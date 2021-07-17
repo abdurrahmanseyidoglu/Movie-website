@@ -56,10 +56,12 @@ import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 export default {
   setup() {
+    const api_url = 'http://www.omdbapi.com'
+    const api_key ='a697e544'
     const detailes = ref({});
     const route = useRoute();
     const MovieDetailes = () => {
-      fetch(`http://www.omdbapi.com/?i=${route.params.id}&plot=full&apikey=a697e544`)
+      fetch(`${api_url}/?i=${route.params.id}&plot=full&apikey=${api_key}`)
         .then((response) => response.json())
         .then((data) => {
           detailes.value = data;

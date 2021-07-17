@@ -54,7 +54,7 @@
     flex-flow: wrap column;
     align-items: center;
     justify-content: center;
-    background-color: $black;
+    background-color: black;
     h1 {
       color: $red;
     }
@@ -71,7 +71,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(0, 0, 0);
     color: white;
     padding: 10px 10px 10px 0px;
     p {
@@ -101,6 +101,7 @@
     }
     img {
       width: 500px;
+      border-radius: 5px;
     }
     @include mq(tablet, max) {
       &-explained {

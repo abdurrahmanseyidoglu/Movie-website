@@ -33,11 +33,13 @@
 import { ref, onMounted } from "vue";
 export default {
   setup() {
+    const api_url = 'http://www.omdbapi.com'
+    const api_key ='a697e544'
     const search = ref("action");
     const movie = ref([]);
     const searchAPI = () => {
       if (search.vlaue != "") {
-        fetch(`http://www.omdbapi.com/?s=${search.value}&apikey=a697e544`)
+        fetch(`${api_url}/?s=${search.value}&apikey=${api_key}`)
           .then((response) => response.json())
           .then((data) => {
             //'Search' is an object key in the API

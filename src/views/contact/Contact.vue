@@ -63,31 +63,51 @@
       <h3 class="faq__title">FAQ</h3>
       <h1 class="faq__header">See <span> Answers </span></h1>
       <ul class="faq__questions">
-        <li class="faq__question">
-          Lorem ipsum dolor sit amet, consectetur adipisicing?
-        </li>
-        <li class="faq__answer">
-          Dolore minima rerum dicta reiciendis, maiores tenetur nisi sint!
-        </li>
-        <li class="faq__question">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, provident?
-        </li>
-        <li class="faq__answer">
-          quidem iusto labore dolorum quod consectetur dolore quaerat nam maxime!
-        </li>
-        <li class="faq__question">sapiente odit ex consequuntur iure a ducimus?</li>
-        <li class="faq__answer">Illo aspernatur consequuntur fugit itaque.</li>
-        <li class="faq__question">
-          velit in magni consectetur totam qui quaerat, blanditiis optio eos, assumenda
-          ipsam repellat?
-        </li>
-        <li class="faq__answer">aperiam saepe. Sunt, velit consequuntur.</li>
-        <li class="faq__question">
-          tempora explicabo est tenetur accusantium id reprehenderit?
-        </li>
-        <li class="faq__answer">
-          Sed tempore ipsum quidem modi maxime culpa pariatur nemo labore.
-        </li>
+        <details>
+          <summary>
+            <li class="faq__question">
+              Lorem ipsum dolor sit amet, consectetur adipisicing?
+            </li>
+          </summary>
+          <li class="faq__answer">
+            Dolore minima rerum dicta reiciendis, maiores tenetur nisi sint!
+          </li>
+        </details>
+        <details>
+          <summary>
+            <li class="faq__question">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, provident?
+            </li>
+          </summary>
+          <li class="faq__answer">
+            quidem iusto labore dolorum quod consectetur dolore quaerat nam maxime!
+          </li>
+        </details>
+        <details>
+          <summary>
+            <li class="faq__question">sapiente odit ex consequuntur iure a ducimus?</li>
+          </summary>
+          <li class="faq__answer">Illo aspernatur consequuntur fugit itaque.</li>
+        </details>
+        <details>
+          <summary>
+            <li class="faq__question">
+              velit in magni consectetur totam qui quaerat, blanditiis optio eos,
+              assumenda ipsam repellat?
+            </li>
+          </summary>
+          <li class="faq__answer">aperiam saepe. Sunt, velit consequuntur.</li>
+        </details>
+        <details>
+          <summary>
+            <li class="faq__question">
+              tempora explicabo est tenetur accusantium id reprehenderit?
+            </li>
+          </summary>
+          <li class="faq__answer">
+            Sed tempore ipsum quidem modi maxime culpa pariatur nemo labore.
+          </li>
+        </details>
       </ul>
     </div>
     <div class="map">
@@ -285,7 +305,10 @@ export default {
   }
   @include mq(tablet, max) {
     .contact {
+    
       &__header {
+      align-items: center;
+      justify-content: center;
         &-img {
           display: none;
         }
@@ -386,6 +409,10 @@ export default {
   align-items: center;
   margin-top: 50px;
   color: $white;
+  details summary::marker {
+    color: rgb(53, 52, 52)
+    //! Why display : none ; isn't working here ??
+  }
   &__title {
     margin: 0;
     color: red;
@@ -401,13 +428,21 @@ export default {
       font-size: 3rem;
     }
   }
+
   &__questions {
     list-style: none;
-  }
-  &__question {
-    background-color: rgb(53, 52, 52);
-    padding: 15px;
-    font-weight: bold;
+    summary {
+      ::marker {
+        color: red;
+      }
+    }
+   details summary {
+      background-color: rgb(53, 52, 52);
+      padding-bottom: 15px;
+      font-weight: bold;
+      margin-top: 10px;
+     
+    }
   }
   &__answer {
     background-color: gray;
