@@ -20,7 +20,7 @@
       <div class="movie__title-right">
         <div class="movie__title-imdb-rating">
           <span class="movie__title-rating-lable"> IMDb RATING</span> :
-          <span class="movie__title-rating-value">{{ detailes.imdbRating }} / 10</span>
+          <span class="movie__title-rating-value">{{ detailes.imdbRating }}</span> / 10
         </div>
         <div class="movie__title-imdb-votes">
           <span class="movie__title-voters-lable"> TOTAL VOTES</span> :
@@ -113,7 +113,7 @@ export default {
     display: flex;
     flex-flow: wrap row;
     gap: 15px;
-    color: gray;
+    color: $purple;
   }
   &-imdb-rating {
     margin-bottom: 10px;
@@ -122,11 +122,13 @@ export default {
     color: gray;
   }
   &-rating-value {
+  color: $purple;
   }
   &-voters-lable {
     color: gray;
   }
   &-voters-value {
+  color: $purple;
   }
 }
 .detailes__main {

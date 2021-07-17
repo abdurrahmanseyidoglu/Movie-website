@@ -84,7 +84,7 @@ export default {
     font-size: 1.2rem;
     padding: 10px;
     &[type="text"] {
-      color: red;
+      color: $purple;
     }
     &::placeholder {
       color: $red;
@@ -124,7 +124,7 @@ export default {
     height: 530px;
     &:hover {
       transition: background-color 1s ease;
-      background-color: rgb(0, 0, 0);
+      background-color: $purple;
       box-shadow: 0px 8px 8px 0px $white;
     }
   }

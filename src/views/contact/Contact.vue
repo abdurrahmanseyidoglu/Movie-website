@@ -433,12 +433,13 @@ export default {
     list-style: none;
     summary {
       ::marker {
-        color: red;
+        color: $purple;
       }
     }
    details summary {
       background-color: rgb(53, 52, 52);
       padding-bottom: 15px;
+      padding-left: 10px;
       font-weight: bold;
       margin-top: 10px;
      
